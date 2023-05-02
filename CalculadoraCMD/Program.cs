@@ -35,6 +35,19 @@ namespace CalculadoraCMD
                     case Menu.Soma:
                         Soma();
                         break;
+
+                    case Menu.Subtracao:
+                        Subtracao();
+                        break;
+
+                    case Menu.Divisao:
+                        Divisao();
+                        break;
+
+                    case Menu.Multiplicacao:
+                        Multiplicacao();
+                        break;
+
                     case Menu.Sair:
                         escolheuSair = true;
                         break;
@@ -58,5 +71,56 @@ namespace CalculadoraCMD
             Console.WriteLine("Aperte ENTER para voltar ao menu: ");
             Console.ReadLine();
         }
+
+        static void Subtracao()
+        {
+            Console.WriteLine("Subtração de dois números: ");
+            Console.WriteLine("Digite o primeiro número: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o segundo número: ");
+            int b = int.Parse(Console.ReadLine());
+            int resultado = a - b;
+            Console.WriteLine($"O resultado é: {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu: ");
+            Console.ReadLine();   
+        }
+
+        /* Na divisão vamos precisar fazer um CAST do tipo de dado de: INT para FLOAT 
+         No caso do RESULTADO, apena alterando um dos dados para FLOAT, o resultado ja ira sew tornar um FLOAT, por fim didaditicos, fizemos CAST nas duas variaveis */
+        static void Divisao()
+        {
+            Console.WriteLine("Divisão entre dois númeoros: ");
+            Console.WriteLine("Digite o primeiro número: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o segundo número: ");
+            int b = int.Parse(Console.ReadLine());
+            float resultado  = (float)a / (float)b;
+            Console.WriteLine($"O resultado é: {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu: ");
+            Console.ReadLine();
+        }
+
+        static void Multiplicacao()
+        {
+            Console.WriteLine("Multiplicação entre dois números: ");
+            Console.WriteLine("Digite o primeiro número: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o segundo número: ");
+            int b = int.Parse(Console.ReadLine());
+            int resultado = a * b;
+            Console.WriteLine($"O resultado é: {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar: ");
+            Console.ReadLine();
+        }
+
+        /* static void Potencia()
+        {
+            Console.WriteLine("Potencia entre dois números: ");
+            Console.WriteLine("Digite o priemiro número: ");
+            double a = double.Parse (Console.ReadLine());
+            Console.WriteLine("Digite o segundo número: ");
+            double b = double.Parse(Console.ReadLine());
+            double resultado = a ** b;
+        } */
     }
 }
