@@ -48,13 +48,19 @@ namespace CalculadoraCMD
                         Multiplicacao();
                         break;
 
+                    case Menu.Potencia:
+                        Potencia();
+                        break;
+
+                    case Menu.Raiz:
+                        Raiz();
+                        break;
+
                     case Menu.Sair:
                         escolheuSair = true;
                         break;
-
-                
+               
                 }
-
                 Console.Clear();
             }            
         }
@@ -113,14 +119,27 @@ namespace CalculadoraCMD
             Console.ReadLine();
         }
 
-        /* static void Potencia()
+         static void Potencia()
         {
-            Console.WriteLine("Potencia entre dois números: ");
-            Console.WriteLine("Digite o priemiro número: ");
-            double a = double.Parse (Console.ReadLine());
-            Console.WriteLine("Digite o segundo número: ");
-            double b = double.Parse(Console.ReadLine());
-            double resultado = a ** b;
-        } */
+            Console.WriteLine("Potencia de um número: ");
+            Console.WriteLine("Digite a base: ");
+            int baseNumerica = int.Parse (Console.ReadLine());  // (base) e um pavara reservada do C# então usaremos (baseNumerica)
+            Console.WriteLine("Digite o expoente: ");
+            int expo = int.Parse(Console.ReadLine());
+            int resultado = (int)Math.Pow(baseNumerica, expo); // Importando bibilioteca Math.Pow - Em seguinda Fazemos um CAST para o tipo INTEIRO
+            Console.WriteLine($"A potencia da base {baseNumerica} elevado ao expoente {expo} é o resultado: {resultado}");
+            Console.ReadLine();
+        } 
+
+        static void Raiz()
+        {
+            Console.WriteLine("Raiz de um número: ");
+            Console.WriteLine("Digite o número: ");
+            int a = int.Parse(Console.ReadLine());
+            double resultado = Math.Sqrt(a); // Importando modulo de Raiz da biblioteca Math.
+            Console.WriteLine($"A Raiz de {a} é: {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar: ");
+            Console.ReadLine();
+        }
     }
 }
